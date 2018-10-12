@@ -535,100 +535,13 @@ in-patient&impatient\\ \hline
 
 
 
-
 \chapter{Sprachdatenbanken}
 
-\section{Einführung und Problemstellung}
-%Definitionen, Ziele, Abgrenzung, verwandte Begriffe
-%Topographie
+\section{Stichworte zum Vortrag \em{Sprachdatenbank}}
 
-Gesprochene Sprache ist höchst {\em variabel} und außerordentlich {\em reich an Information}. Abb. \ref{fig_sdb_strasse} zeigt zwei Äußerungen des Wortes 'Straße', gesprochen von zwei verschiedenen Personen.
+Archivierung, Annotation, Primär-, Sekundär- und Metadaten, Korpus, Repository, (Prä-)Validierung, Datensammlung, Datenaufbereitung
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=.49\textwidth]{grafiken/sprachdatenbanken/STRASSE433353}
-\includegraphics[width=.49\textwidth]{grafiken/sprachdatenbanken/STRASSE203743}
-\caption{Das Wort 'Straße', gesprochen von einem Mann, 16 Jahre alt, 175 cm groß, aus Bayern (links) bzw. einem Mann, 17 Jahre alt, 183 cm groß, aus Sachsen (rechts)}
-\label{fig_sdb_strasse}
-\end{center}
-\end{figure}
-
-Bereits aus zwei so kurzen Äußerungen eines alltäglich vorkommenden Wortes können wir, allein durch Anhören, nicht nur das Wort selbst erkennen, sondern auch Aussagen zu Geschlecht, Alter und die regionale Herkunft der Sprecher, ja sogar zu ihrem Gesundheitszustand oder ihren Emotionen machen. 
-
-Gesprochene Sprache ist {\em flüchtig} -- im Moment der Produktion ist sie bereits verflogen. Zur systematischen Untersuchung muss sie {\em persistent} gemacht werden. Sprachdatenbanken leisten genau dies: sie speichern gesprochene Sprache originalgetreu und dauerhaft, und sie stellen die gespeicherten Sprachsignale und Annotationen zur weiteren Verarbeitung zur Verfügung. Digitale Sprachaufnahmen können immer wieder abgespielt, übertragen, sichtbar gemacht und technisch analysiert werden. 
-
-Im signalphonetischen Band gehören Sprachdatenbanken somit in den Bereich {\em Akustik}, sie stehen also zwischen Sprecher und Hörer. Sie sind ein {\em Zwischenspeicher}, der das akustische Signal und seine Annotation {\em archiviert}.
-
-Die wissenschaftliche Fragestellungen im Kontext von Sprachdatenbanken lautet: Welche Daten muss man in welcher Qualität speichern? Welche fachlichen Aufgabengebiete können Sprachdatenbanken abdecken? Welche Abfragemöglichkeiten benötigt die Fachwissenschaft, um ihre inhaltlichen Fragestellungen bearbeiten zu können? Wie kann man sicherstellen, dass Sprachdaten langfristig verfügbar sind?
-
-\section{Inhalte}
-%Schwerpunkte, Methoden, ausgewählte Modelle
-%Notizen, usw.
-
-\subsection*{Definition} 
-Eine {\em Sprachdatenbank} ist eine auf Dauer angelegte, explizit strukturierte und maschinenlesbare Sammlung von Daten gesprochener Sprache. 
-
-Sie enthält die folgenden Arten von Daten:
-\begin{description}
-\item[Primärdaten]{Audio-, Video- oder Sensorsignaldaten von Sprechern oder Sprechvorgängen}
-\item[Sekundärdaten]{Annotationen, d.h. Beschreibungen der Primärdaten}
-\item[Metadaten]{Daten {\em über} die Primär- und Sekundärdaten, Dokumentation, Nutzungsvereinbarungen}
-\end{description}
-
-{\em Primärdaten} sind prinzipiell unveränderlich: einmal aufgenommen und geschnitten, werden sie nur noch aus technischen Gründen konvertiert oder auf neue Speichermedien migriert. Primärdaten werden erst wertvoll durch passende Sekundärdaten.
-
-{\em Sekundärdaten} sind Beschreibungen des Inhalts der Primärdaten. Sie sind veränderlich, denn es kann beliebig viele Annotationen einer Sprachaufnahme geben, und diese Annotationen können korrigiert und erweitert werden. Die Sekundärdaten dienen dazu, gezielt auf Ausschnitte der Signaldaten zuzugreifen, um diese einer weiteren Bearbeitung zugänglich zu machen. 
-
-{\em Metadaten} beschreiben Struktur und Inhalt einer Sprachdatenbank: Sprache, technische Angaben, Anzahl der Sprecher und Aufnahmedateien, Ort der Aufnahmen, usw. Sie dienen der schnellen Orientierung, ob eine Sprachdatenbank für eine bestimme Fragestellung überhaupt geeignet ist. In der Regel sind die Metadaten frei verfügbar, und sie bilden die Basis von Internetkatalogen zu Sprachressourcen. 
-
-Beispiele von Sprachdatenbanken am Institut sind z.B. {\em CI\_1} mit Sprachaufnahmen von Cochlea-Implantat Patienten, oder {\em Ph@ttSessionz} mit Aufnahmen jugendlicher Sprecher und Sprecherinnen. Sie sind im CLARIN Repository zu finden (siehe \ref{link_clarin_repository}).
-
-\subsection*{Verwandte Begriffe}
-\begin{description}
-\item[Korpus]{wird häufig synonym zu {\em Sprachdatenbank} verwendet, kann aber auch Sammlungen gesprochener Sprache bezeichnen, die
-(noch) nicht in digitaler Form vorliegen. So definiert (Bussmann 1990) ein Korpus als: {\em endliche Menge von konkreten sprachlichen Äußerungen, die als empirische Grundlage für sprachwissenschaftliche Untersuchungen dienen.}}
-\item[Repository]{ist eine im Web verfügbare, strukturierte Sammlung von Daten. Ein Repository bietet sowohl den Zugriff über eine grafische Nutzeroberfläche als auch eine Programmierschnittstelle an. In der Regel haben Nutzer nur lesenden Zugriff}
-\end{description}
-
-\subsection*{Theoretische Grundlagen}
-Grundlage von Sprachdatenbanken ist, dass das Sprachsignal {\em physikalisch gemessen} werden kann, dass Sprachlaute {\em segmentale Einheiten} sind, und dass sich der sprachliche Inhalt aus der {\em sequenziellen Kombination} der Sprachlaute ergibt. Dazu ist ein {\em Kategorisierungsprozess} notwendig, der einzelnen Signalabschnitten Laute zuordnet, die mit Symbolen eines bestimmten Inventars, z.B. IPA Alphabet, bezeichnet werden (siehe Abb. \ref{fig_segmentation}).
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=1.0\textwidth]{grafiken/sprachdatenbanken/Segmentation}
-\caption{Segmentiertes Sprachsignal mit den Annotationsebenen ORT (für Orhographie) und MAU (für automatisch segmentiert) des Wortes 'Straße'. Das Segment des Sprachlauts {\tt [t]} ist selektiert.}
-\label{fig_segmentation}
-\end{center}
-\end{figure}
-
-\subsection*{Digitale Daten}
-Erst mit der digitalen Speicherung von Sprachdaten sind Sprachdatenbanken möglich geworden: sowohl Signal- als auch Annotationsdaten können maschinell verarbeitet, die Daten verlustfrei vervielfältigt werden. Die Daten können unbeschränkt verlustfrei kopiert und verteilt werden, es gibt eine große Vielfalt an Signal- und Annotationseditoren, Aufnahmeprogramme sowie Auswertungs- und Statistiksoftware.
-
-\subsection*{Datenzentren}
-Auf Sprachdaten spezialisierte Datenzentren wie die ELRA ({\em European Language Resources Association}), das LDC ({\em Linguistic Data Consortium}) und das BAS ({\em Bayerisches Archiv für Sprachsignale}) am IPS (Abb. \ref{fig_sdb_datenzentren}) stellen Sprachdatenbanken in Repositories zur Verfügung. Forschungsinfrastrukturen wie CLARIN bieten ein ermöglichen die parallele Suche verteilten Datenzentren, einen Austausch kompatibler Daten sowie ein einheitliches Login.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=1\textwidth]{grafiken/sprachdatenbanken/bas-repository}
-\caption{CLARIN-D Repository des Bayerischen Archivs für Sprachsignale am IPS.}
-\label{fig_sdb_datenzentren}
-\end{center}
-\end{figure}
-
-\subsection*{Erstellung von Sprachdatenbanken}
-Abb. \ref{fig_sdb_phasenmodell} stellt die Phasen und Arbeitsverteilung der Sprachdatenbankerstellung dar. Die in dieser Abbildung getrennten Rollen Auftraggeber ({\em extern}) und Ausführender ({\em intern}) können auch zusammenfallen.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=1\textwidth]{grafiken/sprachdatenbanken/corpus-phasemodel-de}
-\caption{Phasenmodell für die Erstellung von Sprachdatenbanken}
-\label{fig_sdb_phasenmodell}
-\end{center}
-\end{figure}
-
-
-\subsection*{Arbeitsablauf und Tools}
-Zur Erstellung von Sprachdatenbanken verwendet man eine Reihe von Softwarewerkzeugen ({\em Tools}), die jeweils unterschiedliche Daten verarbeiten bzw. erstellen.
+\section{Übungen, Aufgaben}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -637,33 +550,6 @@ Zur Erstellung von Sprachdatenbanken verwendet man eine Reihe von Softwarewerkze
 \label{fig_sdb_arbeitsablauf}
 \end{center}
 \end{figure}
-
-\subsection*{Sprachdatenbank Ph@ttSessionz}
-Die Sprachdatenbank Ph@ttSessionz wurde ursprünglich zur Verbesserung von Spracherkennungssystemen für die Stimmen Jugendlicher erstellt. Da sie aber Aufnahmen aus allen Regionen Deutschlands sowie Informationen über den Ort der Einschulung der Sprecher enthält, kann sie auch für die Untersuchung regionaler Varietäten des Alltagsdeutschen verwendet werden.
-
-\begin{itemize}
-\item{Sprachdatenbank ursprünglich zur Technologieentwicklung}
-\item{jugendliche Sprecher (Alter 12-20)}
-\item{46 Aufnahmeorte in Deutschland}
-\item{1019 Sprecher, 130.060 Äußerungen}
-\item{orthographische Transkription}
-\item{automatisch phonetisch segmentiert}
-\end{itemize}
-
-\subsection*{Ph@ttSessionz: ein Anwendungsbeispiel}
-Aus den Daten über die Sprecher sowie den Signaldateien der Sprachdatenbank Ph@ttSessionz kann man die Veränderung der Stimmhöhe, oder, phonetisch ausgedrückt, der {\em Grundfrequenz} oder {\em f0} bei Jugendlichen dokumentieren (siehe Abb. \ref{fig_sdb_grundfrequenz}). 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{grafiken/sprachdatenbanken/f0-entwicklung-phatt}
-\caption{Diagramm der Veränderung der Grundfrequenz bei Jugendlichen, berechnet aus den Aufnahmen der Ph@ttSessionz-Sprachdatenbank}
-\label{fig_sdb_grundfrequenz}
-\end{center}
-\end{figure}
-
-%\newpage
-%\section{Notizen}
-%\newpage
-\section{Übungen, Aufgaben}
 
 \begin{enumerate}
 \item{Nennen Sie drei der vier definierten Zeitalter phonetischer Datenerhebung}
@@ -676,15 +562,6 @@ Aus den Daten über die Sprecher sowie den Signaldateien der Sprachdatenbank Ph@
 \vspace{2cm}
 \end{enumerate}
 
-
-\section{Verknüpfungen im Fach} 
-\begin{itemize}
-\item{Sprachdatenbanken werden zum Trainieren von Sprach-, Sprachen- und Sprechererkennungssystemen benötigt, und sie bilden die Basis der konkatenativen Sprachsynthese.}
-\item{Der Zugriff auf Sprachdatenbanken erfordert Abfragesprachen, die zu den Programmiersprachen zählen. Anwendungsprogramme und grafische Nutzeroberflächen nutzen Programmierschnittstellen, um die Inhalte der Datenbank zu verwenden. Um Daten in einer Sprachdatenbank ablegen zu können sind häufig Datenkonversionen notwendig, die mit Skripten programmiert werden.}
-\item{Statistische Untersuchungen benötigen für die Beantwortung der Fragestellung geeignete Sprachdaten -- sowohl Signal- als auch Annotationsdaten -- in ausreichend großem Umfang.}
-\item{Die Experimentalphonetik erhebt Sprachdaten. Diese werden als strukturierte Datenbestände in Sprachdatenbanken abgelegt, um dauerhaft und für unterschiedliche Untersuchungen zugänglich zu sein.}
-\item{Die kognitive Sprachverarbeitung benötigt für empirische Untersuchungen, vor allem im Bereich perzeptiver Analysen, Signal- und Annotationsdaten aus Sprachdatenbanken.} 
-\end{itemize}
 
 \section{Literatur}
 
@@ -712,192 +589,12 @@ Schiel, F. (2003). The Validation of Speech Corpora. Institut für Phonetik. LMU
 
 \chapter{Automatische Spracherkennung}
 
-\section{Übersicht}
-
-{\bf Versuch einer Definition}
-%Kursiv geändert
-Automatische Spracherkennung (automatic speech recognition, ASR) 
-ist die technische (d.\,h. ohne menschliche 
-Hilfe) Abbildung des physikalischen 
-(messbaren) Sprachsignals auf Symbole, deren semantischer Gehalt nach 
-dem Konsens der jeweiligen Sprachgemeinschaft f\"ur dieses Signal 
-stimmig ist. Diese Symbole
-k\"onnen linguistischer Natur sein (Laute, Silben, W\"orter...), 
-aber auch logische, welche eine gew\"unschte 
-Aktion ausl\"osen (z.\,B. An/Aus).
-
-{\bf Verwandte Begriffe}
-\begi
-\item Sprachenerkennung (language recognition)
-\item Sprechererkennung (speaker recognition)
-\ndit
-
-{\bf Blockschaltbild}
-
-%\begin{figure}
 \includegraphics[width=\textwidth]{grafiken/automatische-spracherkennung/block.png}
-%\caption{} \label{}
-%\end{figure}
-
-{\bf Problem: Warum l\"a{\ss}t sich diese Abbildung nicht programmieren?}
-\begi
-\item Sprachsignale sind extrem variabel: keine gesprochene \"Au{\ss}erung kann
-exakt gleich wiederholt werden.
-\item Stimmen verschiedener Sprecher unterscheiden sich
-\item Zeitliche Dynamik: Beginn und Ende linguistischer Einheiten nicht erkennbar
-\item Akustik: Abstand zum Mikrophon und Reflektionen
-\item St\"orger\"ausche
-\ndit
-
-\section{Störparameter} 
-
-Mensch:  Stimmung, Geschwindigkeit, gesundh. Zustand,
-                 Erschöpfung, kooperativ/n. kooperativ,
-                 Lombard-Effekt.\\
-Akustik: Wechselnde Umgebung (Echo/Hall), Hintergrund-
-                 geräusche, Abstand zum Mikrofon.\\
-Mikrofon: Versch. Charakteristik, Empfindlichkeit,
-                  Übertragungskanal, Rauschen, Störgeräusche.\\
-Algorithmen: Modellannahmen, Rechenungenauigkeit.\\
-
-{\bf L\"osung: \textit{induktive Inferenz}, maschinelles Lernen, statistische Mustererkennung}
-
-Dazu notwendig: Große etikettierte Sprachdatensammlungen (Sprachkorpora).
-
-\section{Beispiele für automatische Spracherkennung}
-\begi
-\item Command \& Control: Eingabe Kommando, Ausgabe Aktion \\
-{\em 'Licht an', 'Email abschicken', 'Vollwaschgang'}
-\item Eingabe von Formularen: Eingabe Buchstaben/Ziffern, Ausgabe: Aktion\\
-'Nennen Sie Ihre Kundenummer!'  {\em 'eins sieben acht zwei vier ...'}\\
-'Sagten Sie: eins sieben acht zwei vier ...?' {\em 'ja'}
-\item Diktieren von Text: Eingabe beliebige Sprache, Ausgabe Text\\
-{\em 'Sehr geehrte Damen und Herren Komma Absatz mit Ihrem Schreiben vom ...'}
-\item Abfragen von Informationen: Eingabe Frage, Ausgabe gew\"unschte Information\\
-{\em 'Wie wird das Wetter morgen in London?'\\
-'Gibt es Staus auf der A7 Richtung Stuttgart?'\\
-'Wie hoch ist der Fujiyama?'}
-\item Phonetischer Transkribierer: Eingabe beliebige Sprache, Ausgabe IPA
-\ndit
-
-\section{Struktur}
-{\em Ein ASR-Algorithmus gliedert sich in zwei funktional 
-unterschiedliche Teile:}
-\vsph
-
-\begi
-\item {\bf Frontend} : Digitalisierung, Filterung, Extraktion von Merkmalen
-\item {\bf Backend} : Mustererkennung, Suche nach der besten zeitlichen 
-Kombination von Mustern
-\ndit
-
-\includegraphics[width=\textwidth]{grafiken/automatische-spracherkennung/struktur.png}
-
-{\bf Frontend}
-{\em Der Frontend verarbeitet das Sprachsignal bis hin zu einer 
-Reihe von Merkmalsvektoren, welche in regelmäßigem zeitlichem 
-Abstand angeordnet sind (z.\,B. alle 10msec). Ein Merkmalsvektor
-enthält als Elemente quantifizierbare phonetische Merkmale des 
-Teilstücks im Sprachsignal um die Position des Merkmalsvektors
-(Fenster).}
-
-{\bf Backend}
-{\em Der Backend hat 2 Aufgaben zu lösen:}
-\vsph
-\begi
-\item Hypothetische Muster in der Zeitreihe der Merkmalsvektoren 
-identifizieren und bewerten (Muster können sich überlappen)
-\item Die zeitlich bündige Kombination von Mustern finden, welche die
-beste Gesamtbewertung erzielt (z.\,B. einen Satz aus mehreren Wörtern)
-\ndit
-\vsph
-Zur Bewertung von hypothetischen Mustern gibt es viele verschiedene 
-Verfahren. Die wichtigsten sind: 
-\begi
-\item {\em Dynamic Time Warping (DTW, auch manchmal
-Dynamic Programming, DP genannt) 
-\item Hidden Markov Modelle (HMM) oder 
-\item Künstliche Neuronale Netze (ANN)}
-\ndit
 
 
-\section{ASR Strategien}
-Zwei grundlegende Strategien: Bottom-up und Top-down
+\section{Stichworte zum Vortrag \em{Automatische Spracherkennung}}
 
-{\bf Bottom-up}
-
-{\em Die Bottom-up Strategie erkennt zunächst eine Kette von möglichst
-kleinen linguistischen Einheiten (z.\,B. Laute) und versucht darauf aufbauend,
-immer größere Einheiten bis hin zur kompletten Äußerung zu erschließen.}
-
-Beispiel: {\em Halbsilben $\Rightarrow$ Silben $\Rightarrow$ Morphe $\Rightarrow$ Wörter $\Rightarrow$ Satz}
-
-Vorteile / Nachteile:
-\begi
-\item {+ weniger Kombinatorik (= weniger Suchaufwand = schneller)}
-\item {+ bessere Kontrolle über verschiedene linguistische Ebenen}
-\item {- Segmentierungsfehler auf unterster Ebene nicht reparierbar}
-\item {- Bewertungsfehler auf unterster Ebene schwer reparierbar}
-\item {- Phonotaktik und Syntaktik schwer zu integrieren}
-\ndit
-
-\centerline{\includegraphics[width=13cm]{grafiken/automatische-spracherkennung/bott.png}}
-
-{\bf Top-Down}
-
-{\em Die Top-Down Strategie konstruiert zunächst eine sehr große Menge
-von Kombinationen, schränkt diese durch Ausnutzung der Phonotaktik, Lexik 
-und Syntaktik ein und sucht dann innerhalb dieser Kombinationen diejenige,
-deren akustische Ähnlichkeit am größten ist.}
-
-Vorteile / Nachteile:
-\begi
-\item {+ keine Fehlerfortpflanzung möglich (da alle Ebenen gleichzeitig bearbeitet werden)}
-\item {+ Phonotaktik, Lexik und Syntaktik einfach integrierbar}
-\item {+ Sehr gut vereinbar mit statistischen Verfahren}
-\item {+ Fast immer bessere Performanz als Bottom-up Strategie}
-\item {- astronomische Anzahl von Kombinationen; sehr intelligente Such-Algorithmen notwendig (Mehrdim. DTW, Viterbi-Decoding)}
-\ndit
-
-\centerline{\includegraphics[width=10cm]{grafiken/automatische-spracherkennung/top.png}}
-
-\section{Performanz (Stand 2018)}
-Messung in {\em Wort Accuracy} $W_A$ (Wortakuratheit := wieviele gesprochene Wörter erkannt werden) 
-auf manuell annotierten Korpora.
-\begi
-\item Diktieren, Nahbesprechungsmikrophon, sprecheradaptiv, Lexikon 30000-80000, 
-eingeschränkte {\em domain}, fließende Sprache: {\em ca. 95 - 98\% $W_A$}
-\item Steuerung von Geräten, Nahbesprechungsmikrophon, sprecherunabhängig, Lexikon 10 - 50, 
-sehr eingeschränkte {\em domain}, Einzelwörter: {\em ca. 95 - 99\% $W_A$}
-\item Dialogsystem, Telephonkanal, sprecherunabhängig, Lexikon 10 - 20, 
-sehr eingeschränkte {\em domain}, Einzelwörter: {\em ca. 90 - 99\% $W_A$}
-\item Dialogsystem, Nahbesprechungsmikrophon, sprecherunabhängig, Lexikon 1000 - 5000, 
-eingeschränkte {\em domain}, Einzelsätze: {\em ca. 95 - 98\% $W_A$}
-\ndit
-
-\section{Wichtigste Probleme}
-\begi
-\item Empfindlichkeit gegen Störgeräusche, {\em cross talk}, Kanalcharakteristik, Reflexionen
-\item Fehlerrate steigt mit Lexikongröße
-\item Fehlerrate steigt mit sinkender Testsatzperplexität der Syntaktik
-\item Gute Performanz fast nur mit Nahbesprechungsmikrophonen ({\em headset})
-\item Großer Wortschatz erfordert Sprecheradaption (einige Stunden Training) und 
-Einschränkung der {\em domain} (z.\,B. Geschäftsbriefe, Röntgendiagnostik)
-\item ASR hat kein 'Weltwissen', ambiger Input ist schwer auflösbar
-\item Evaluierungsergebnisse sind stochastischer Natur und schwer vergleichbar,
-daher {\em benchmarks} (Wettbewerbe) unter gleichen Bedingungen
-\item Realistische Sprachdatenkorpora sind schwer zu produzieren, zuviele Faktoren:
-Alter, Geschlecht, Dialekt, soziale Herkunft, Gesundheits-/Gemütszustand
-\ndit
-
-\section{Zusammenfassung}
-\begi
-\item ASR ist nicht programmierbar wegen hoher Variabilität der Sprache
-\item Lösung: Maschinelles Lernen auf großen Sprach-Korpora
-\item Struktur: Frontend (Sprachsignal -$>$ Merkmale), Backend (Mustererkennung, Suche)
-\item Merkmale: meistens spektral basiert, Cepstren, gehörgerechte Skalen
-\item 2 Suchstrategien: {\em Bottom-up und Top-down}
-\ndit
+Frontend, Backend, bottom-up, top-down, Merkmalsvektor, Variabilität von Sprachsignalen, Störparameter
 
 \section{Literatur}
 
@@ -958,29 +655,8 @@ Alter, Geschlecht, Dialekt, soziale Herkunft, Gesundheits-/Gemütszustand
 
 
 
-
-
-
-
-%\maketitle
-
-
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=\textwidth]{diagramme/topographie_sdb}
-%\label{fig_topo_sdb}
-%\end{center}
-%\end{figure}
-
 \chapter{Sprachsynthese}
 
-%\maketitle
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Übersicht}
-  
-  Kurze Definition: \emph{Unter Sprachsynthese versteht man die künstliche Erzeugung der menschlichen Sprechstimme.}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -988,270 +664,15 @@ Alter, Geschlecht, Dialekt, soziale Herkunft, Gesundheits-/Gemütszustand
 \label{ts}
 \end{center}
 \end{figure}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Typologie von Synthesesystemen}
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \textbf{Reichweite}
+\section{Stichworte zum Vortrag \em{Sprachsynthese}}
 
-  \begin{itemize}
-  \item Concept-to-Speech CTS:
-  \emph{Semantisches Konzept $\longrightarrow$ Text $\longrightarrow$ akustisches Signal}
-  \item  Text-to-Speech TTS: \emph{Text $\longrightarrow$ akustisches Signal}
-  \end{itemize}\newpage
+Text-to-Speech, Concep-to-Speech, Formantsynthese, artikulatorische Synthese, konkatenative Synthese, Textnormalisierung, Graphem-Phonem-Konvertierung
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \textbf{Art der Synthese}
-
-  \begin{itemize}
-  \item Formantsynthese: \emph{Generierung und Hörbarmachung künstlicher Sonagramme}
-  \item Artikulatorische Synthese: \emph{Artikulationsmodell $\longrightarrow$ Akustik}
-  \item Konkatenative Synthese:  \emph{Verkettung von phonetischen Segmenten aus einer Datenbank}
-  \end{itemize}
-  
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Architektur}
-
-  \begin{figure}[!htbp]
-  \begin{small}
-  \centerline{
-  \xymatrix@! C=3cm {
-  Text \ar[4,0] & Textnormalisierung \ar[1,0] & (Computer-)linguistik \ar[2,0]\\
-  & Linguistische \textrm{ } Analysen  \ar[1,0] & \\
-  & Graphem-Phonem-Konvertierung  \ar[1,0] & Phonetik \ar[2,0]\\
-  & Prosodie-Generierung  \ar[1,0] & \\
-  Signal & Akustische \textrm{ } Gen. & Phonetik, E-Technik
-  }
-  }
-  \end{small}
-  \end{figure}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Textnormalisierung}
-  
-  \begin{itemize}
-  \item \emph{Satzsegmentierung} (Disambiguierung der Interpunktion)
-  \item \emph{Expansion} von Titeln, Abkürzungen, Ziffernfolgen etc.
-  \item Beispiel: 
-  \begin{itemize}
-  \item am 2. $\longrightarrow$ zweit\emph{en}
-  \item der 2. $\longrightarrow$ zweit\emph{e}
-  \item 1980 Studenten $\longrightarrow$ eintausendneunhundertachtzig
-  \item im Jahr 1980 $\longrightarrow$ neunzehnhundertachtzig
-  \item die Durchwahl lautet 1980 $\longrightarrow$ eins neun acht null
-  \end{itemize}
-  \item mittels lokaler Grammatiken: 1980 $\longrightarrow$ neunzehnhundertachtzig $|$ Jahr \_\_
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Linguistische Analysen}
-
-  \begin{itemize}
-  \item Zuweisung der \emph{Wortarten} (Part-of-Speech-Tagging)
-  \item ggf. \emph{syntaktische} Analyse
-  \item ggf. \emph{semantische} Analyse, Fokuslokalisierung
-  \item Fokus:
-  \begin{itemize}
-  \item \emph{Informationszentrum} einer Äußerung
-  \item neue Information oder Kontrast
-  \end{itemize}
-  \item relevant für die Prosodie der Äußerung
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Graphem-Phonem-Konvertierung}
-
-  \begin{itemize}
-  \item Überführung der Buchstabenfolge in eine Transkription
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Table Lookup-Verfahren (van den Bosch et al., 1993)}
-
-  \begin{itemize}
-  \item sprachunabhängiger rein datenbasierter Ansatz
-  \item \emph{Training: Erstellung einer Graphem-Phonem-Tabelle}
-
-  \begin{tabular}{|l|l|}
-  \hline
-  linker Kontext+\emph{Zielgraphem}+rechter Kontext & \emph{Zielphonem}\\
-  \hline
-  b+\emph{u}+n & \emph{/U/} \\
-  q+\emph{u}+a & \emph{/v/} \\
-  \hline
-  \end{tabular}
-
-  \item Anwendung: Nachschlagen in der Tabelle
-  \begin{itemize}
-  \item ``Q\emph{u}alle'':  q+u+a $\longrightarrow$ \emph{/v/}
-  \item ``B\emph{u}nd'': b+u+n $\longrightarrow$ \emph{/U/}
-  \end{itemize}
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Prosodische Modellierung}
-
-  \begin{itemize}
-  \item Ermittlung der \emph{prosodischen Struktur}
-  \item Modellierung von \emph{Grundfrequenzverlauf} und \emph{Lautsegmentdauern}
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Prosodische Struktur}
-
-  \begin{itemize}
-  \item Phrasengrenzen: Gliederung einer Äußerung
-  \item Akzente: Hervorhebung wichtiger Äußerungsteile
-  \item Beispiel: 
-  \begin{itemize}
-  \item Der \emph{Bundestag} $|$ setzte seine \emph{Debatte} $|$ heute \emph{fort}. $|$ (Grenzen $|$, Akzentuierte Wörter \emph{kursiv})
-  \end{itemize}
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Lokalisierung von Phrasengrenzen}
-  
-  \begin{itemize}
-  \item \emph{Chink-Chunk-Algorithmus} (Liberman et al., 1992):
-  \begin{itemize}
-  	\item \emph{Chink-Wortarten} (Präpositionen, Artikel, \ldots) \emph{phraseninitial}
-  	\item \emph{Chunk-Wortarten} (Substantive, Verbpatikel, \ldots) \emph{phrasenfinal}
-  \end{itemize}
-  \item Chunk-Wörter im obigen Beispiel: \emph{Bundestag, Debatte, fort}
-  \end{itemize}
-
-  \begin{itemize}
-  \item Je \emph{unvorhersagbarer} ein Wort, desto eher ist es akzentuiert
-  \item Beispiel: \emph{Kritik} zu üben \emph{vs.} Kritik zu \emph{ignorieren}
-  \item Ermittlung der Vorhersagbarkeit eines Worts $w$:
-  \begin{itemize}
-  \item kontextunabhängige \emph{Auftretenswahrscheinlichkeit} $P(w)$ 
-  \item kontextabhängige \emph{bedingte Wahrscheinlichkeit} $P(w|\textrm{Wortumgebung})$
-  \end{itemize}
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Modellierung des Grundfrequenzverlaufs}
-
-  \begin{itemize}
-  \item \emph{Fujisaki-Modell} (Fujisaki, 1987):
-  \begin{itemize}
-  \item \emph{superpositional:} Addition von globaler Phrasenkontur und lokalen Akzentkonturen
-  \item Initiierung durch \emph{Phrasenkommandos} zu Beginn prosodischer Phrasen und \emph{Akzentkommandos} auf akzentuierten Silben.
-  \end{itemize}
-  \end{itemize}
-  
-  \begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=\textwidth]{grafiken/sprachsynthese/fujisaki-pic.png}
-  \caption{Fujisaki-Modell}
-  \end{center}
-  \end{figure}
-
-  %\includegraphic{Missing fujisaki pic}
+\section{Übungen}
 
 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Modellierung der Lautdauern}
-  
-  \begin{itemize}
-  \item $\hat{d}(x) = f \cdot \bar{d}(x)$
-  \item \emph{intrinsische Lautdauer} $\bar{d}(x)$ des Lauts $x$
-  \begin{itemize}
-  \item z.\,B. mittlere Dauer von $x$ in einem segmentierten Korpus
-  \item für Vokale höher als für Konsonanten
-  \item für tiefe Vokale höher als für hohe Vokale
-  \end{itemize}
-  \item \emph{Anpassungsfaktor} $f$
-  \begin{itemize}
-  \item zur Umwandlung der intrinsischen Dauer in die \emph{realisierte Dauer} $\hat{d}(x)$ des Lauts $x$
-  \item abhängig von Einflussfaktoren, wie:
-  \item \emph{Prosodie:} Silbe akzentuiert $\longrightarrow$ Erhöhung der Dauer, d.\,h. $f>1$
-  \item \emph{Lautkontext:} stimmloser Obstruent folgt $\longrightarrow$ Verringerung der Dauer von Vokalen, d.\,h. $f<1$
-  \end{itemize}
-  \end{itemize}
 
-\newpage
-
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Akustische Generierung}
-  
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Input}
-
-  \begin{itemize}
-  \item Transkription (von Graphem-Phonem-Konvertierung)
-  \item für jedes Phon:
-  \begin{itemize}
-  \item Grundfrequenz-Werte (von prosodischer Modellierung)
-  \item Dauerangabe (von prosodischer Modellierung)
-  \end{itemize}
-  \end{itemize}
-
-  %%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection*{Beispiel: Konkatenative Synthese (\emph{Unit selection})}
-
-  \begin{itemize}
-  \item Verkettung von phonetischen Einheiten, z.\,B. \emph{Diphonen}
-  \item \emph{Diphon:} Segment von Mitte eines Phons bis zur Mitte des folgenden Phons
-  \item dadurch Berücksichtigung der \emph{koartikulatorisch bedingten akustischen Variation} $\longrightarrow$ wichtig für Natürlichkeit und Verständlichkeit der Synthese
-  \end{itemize}
-
- 
- \begin{figure}
- \begin{center}
- \begin{minipage}[ct]{0.2\textwidth}
- 
-\includegraphics[width=1\textwidth]{grafiken/sprachsynthese/fa}
-\end{minipage}
-\hspace{2cm}
-\begin{minipage}[ct]{0.2\textwidth}
-\includegraphics[width=1\textwidth]{grafiken/sprachsynthese/sa}
-\end{minipage}
-\end{center}
-\caption {Diphone /fa/ und /sa/: unterschiedliche F2-Transitionen.}
-\end{figure}
- 
- 
-
-
-\begin{itemize}
-\item {\bf Inventar:}
-\begin{itemize}
-\item $40^2=1600$ \emph{potentielle Phonemkombinationen}, eingeschränkt durch \emph{Phonotaktik}
-\item jedes Diphon-Type in \emph{mehrfacher Realisierung} in der Datenbank gespeichert
-\item \emph{Types:} unterschiedliche Diphone, /fa/ vs. /sa/;\\\emph{Realisierung:} /fa/$_1$, /fa/$_2$ etc.
-\end{itemize}
-\item \emph{Verkettung:}
-\begin{itemize}
-\item \emph{Transkription} $\longrightarrow$ Wahl der Diphon-Types
-\item \emph{Lautliche Umgebung, Prosodie} $\longrightarrow$ Wahl der am besten passenden gespeicherten Diphon-Realisierung 
-\end{itemize}
-\end{itemize}
-
-\begin{itemize}
-\item \emph{Auswahl der bestgeeigneten Diphon-Realisierung}
-\begin{itemize}
-\item anhand einer \emph{Kostenfunktion}
-\item \emph{Target-Kosten:} wie stark weicht Diphon von geforderter Grundfrequenz, Dauer etc. ab?
-\item \emph{Join-Kosten:} wie gut passt Diphon zum vorangehenden Diphon?
-\end{itemize}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Synthesebeispiele}
-
-\url{http://ttssamples.syntheticspeech.de/deutsch/}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Literatur}
 
 
