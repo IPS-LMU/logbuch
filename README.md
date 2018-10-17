@@ -14,3 +14,11 @@ Das Logbuch ist in LaTeX gesetzt und kann mit einem beliebigen Latex-Editor oder
 $ mkdir build
 $ pdflatex -output-directory build main.tex
 ```
+
+## GitBook kompilieren
+
+```sh
+find kapitel/ -name "*.tex" -exec pandoc "{}" -t gfm -o "{}.md" ";"
+find kapitel/ -name "*.md" -exec sed -e 's/grafiken\//\/grafiken\//g' -i "" "{}" ";"
+gitbook serve # or gitboook build
+```
